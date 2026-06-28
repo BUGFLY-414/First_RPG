@@ -1,0 +1,64 @@
+
+{
+  "dialogs": [
+	{
+	  "id": "start",
+	  "speaker": "[b]我[/b](这句测试粗体效果)",
+	  "text": "老东西你找我什么事！",
+	  "next_id": "ask"
+
+	},
+	{
+	  "id": "ask",
+	  "speaker": "村长",
+	  "text": "你愿意帮我们吗？",
+	  "options": [
+		{ "text": "我愿意！", "next_id": "yes" },
+		{ "text": "让我想想……", "next_id": "maybe" },
+		{ "text": "不关我事", "next_id": "no" }
+	  ]
+	},
+	{
+	  "id": "yes",
+	  "speaker": "村长",
+	  "text": "太好了！拿上这把剑出发吧！",
+	  "next_id": "yes2"
+	},
+	{
+	  "id": "yes2",
+	  "speaker": "我",
+	  "text": "那我走了。",
+	  "next_id": "yes3"
+	},
+	{
+	  "id": "yes3",
+	  "speaker": "村长",
+	  "text": "快滚。",
+	  "next_id": ""
+	},
+	{
+	  "id": "maybe",
+	  "speaker": "村长",
+	  "text": "好吧，想好了再来找我。",
+	  "next_id": "maybe2"
+	},
+	{
+	  "id": "maybe2",
+	  "speaker": "我",
+	  "text": "嗯嗯。",
+	  "next_id": ""
+	},
+	{
+	  "id": "no",
+	  "speaker": "村长",
+	  "text": "唉……这年头……",
+	  "next_id": "no2"
+	},
+	{
+	  "id": "no2",
+	  "speaker": "我",
+	  "text": "这年头年轻人都这样。",
+	  "next_id": ""
+	}
+  ]
+}

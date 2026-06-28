@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MonsterData" format=3 uid="uid://bhjja6nsgyy1u"]
+
+[ext_resource type="Script" uid="uid://mdb2lx1g2e5i" path="res://Data/MonsterData/monster_data.gd" id="1_bqb8d"]
+
+[resource]
+script = ExtResource("1_bqb8d")
+name = "史莱姆"
+coin_reward = 1
+metadata/_custom_type_script = "uid://mdb2lx1g2e5i"

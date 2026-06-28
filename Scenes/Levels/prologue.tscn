@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ciwu07m67bxw2"]
+
+[ext_resource type="Script" uid="uid://cdptvb1u1mdhn" path="res://Scripts/Levels/prologue.gd" id="1_dexs6"]
+
+[node name="Prologue" type="Node2D" unique_id=1984966580]
+script = ExtResource("1_dexs6")

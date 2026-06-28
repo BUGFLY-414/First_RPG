@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://tktxbh8hvf26"]
+
+[ext_resource type="FontFile" uid="uid://c34hmocgwbla5" path="res://Assets/Fonts/Silver.ttf" id="1_0nejw"]
+[ext_resource type="Script" uid="uid://7p4dnly24esa" path="res://Scripts/game_world.gd" id="1_qvgq0"]
+[ext_resource type="LabelSettings" uid="uid://ckrwdaho8xkx4" path="res://Settings/new_label_settings.tres" id="3_alii3"]
+
+[node name="GameWorld" type="Node2D" unique_id=1034303992]
+script = ExtResource("1_qvgq0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=858075663]
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer" unique_id=854557635]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -788.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+vertical = true
+
+[node name="Button" type="Button" parent="CanvasLayer/BoxContainer" unique_id=1008637983]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0nejw")
+theme_override_font_sizes/font_size = 64
+text = "前往战斗场景"
+
+[node name="Button2" type="Button" parent="CanvasLayer/BoxContainer" unique_id=564895137]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0nejw")
+theme_override_font_sizes/font_size = 64
+text = "创建角色"
+
+[node name="Button3" type="Button" parent="CanvasLayer/BoxContainer" unique_id=1822391342]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0nejw")
+theme_override_font_sizes/font_size = 64
+text = "前往对话测试"
+
+[node name="Button4" type="Button" parent="CanvasLayer/BoxContainer" unique_id=380735878]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0nejw")
+theme_override_font_sizes/font_size = 64
+text = "事件系统测试"
+
+[node name="Button5" type="Button" parent="CanvasLayer/BoxContainer" unique_id=515730950]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "退出"
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=575542176]
+offset_left = 966.0
+offset_top = 16.0
+offset_right = 1114.0
+offset_bottom = 53.0
+text = "按I打开角色面板"
+label_settings = ExtResource("3_alii3")
+
+[connection signal="pressed" from="CanvasLayer/BoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/BoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/BoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/BoxContainer/Button5" to="." method="_on_button_5_pressed"]

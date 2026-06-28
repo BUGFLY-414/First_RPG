@@ -1,0 +1,18 @@
+[gd_resource type="Theme" format=3 uid="uid://c848p31pgpknt"]
+
+[ext_resource type="StyleBox" uid="uid://n06wtdfrgm7x" path="res://Settings/button_flat.tres" id="1_sqswd"]
+[ext_resource type="StyleBox" uid="uid://df65vr7p3id6t" path="res://Settings/button_focus_flat.tres" id="2_8oqhx"]
+
+[resource]
+default_font_size = 24
+Button/styles/disabled = ExtResource("1_sqswd")
+Button/styles/disabled_mirrored = ExtResource("1_sqswd")
+Button/styles/focus = ExtResource("2_8oqhx")
+Button/styles/hover = ExtResource("2_8oqhx")
+Button/styles/hover_mirrored = ExtResource("2_8oqhx")
+Button/styles/hover_pressed = ExtResource("2_8oqhx")
+Button/styles/hover_pressed_mirrored = ExtResource("2_8oqhx")
+Button/styles/normal = ExtResource("1_sqswd")
+Button/styles/normal_mirrored = ExtResource("1_sqswd")
+Button/styles/pressed = ExtResource("1_sqswd")
+Button/styles/pressed_mirrored = ExtResource("1_sqswd")

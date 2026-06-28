@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://jnwkjymss7ue"]
+
+[ext_resource type="Script" uid="uid://dbpdmshgsnv7q" path="res://Scripts/Core/item.gd" id="1_a6da8"]
+[ext_resource type="Texture2D" uid="uid://chcwrm8kiso5w" path="res://Assets/Items/gel.png" id="1_av8p5"]
+
+[resource]
+script = ExtResource("1_a6da8")
+name = "凝胶"
+description = "美味且易燃"
+icon = ExtResource("1_av8p5")
+metadata/_custom_type_script = "uid://dbpdmshgsnv7q"

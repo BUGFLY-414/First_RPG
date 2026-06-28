@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://beti4j087fid1"]
+
+[ext_resource type="Script" uid="uid://tr8w8i1kt3ke" path="res://Scripts/battle_scene.gd" id="1_b25br"]
+[ext_resource type="FontFile" uid="uid://c34hmocgwbla5" path="res://Assets/Fonts/Silver.ttf" id="2_hdvqd"]
+[ext_resource type="PackedScene" uid="uid://c4jmg15oc5bv" path="res://Scenes/UI/bag_panel.tscn" id="4_e5vbs"]
+
+[node name="BattleScene" type="Node2D" unique_id=1497557195]
+script = ExtResource("1_b25br")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1023278687]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1150.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8039216, 0.9490196, 0.9490196, 1)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1616644742]
+
+[node name="Label" type="RichTextLabel" parent="UI" unique_id=974580152]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.3919753
+anchor_right = 0.5
+anchor_bottom = 0.3919753
+offset_left = -576.0
+offset_top = -254.0
+offset_right = 219.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4307305, 0.4280822)
+theme_override_colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_fonts/normal_font = ExtResource("2_hdvqd")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "喵喵喵"
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" type="Control" parent="UI" unique_id=2101562193]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -88.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 43.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/Player" unique_id=1249850997]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 150.0
+offset_right = 391.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(0.21568628, 0.9882353, 0.27058825, 1)
+theme_override_fonts/font = ExtResource("2_hdvqd")
+theme_override_font_sizes/font_size = 32
+
+[node name="Label2" type="Label" parent="UI/Player" unique_id=1666282876]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 124.0
+offset_right = 186.0
+offset_bottom = 161.0
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_fonts/font = ExtResource("2_hdvqd")
+theme_override_font_sizes/font_size = 32
+text = "玩家生命:"
+
+[node name="HP" type="Label" parent="UI/Player" unique_id=421727096]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 125.0
+offset_right = 245.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Monster" type="Control" parent="UI" unique_id=1691607315]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -375.0
+offset_top = 3.0
+offset_right = -335.0
+offset_bottom = 43.0
+grow_horizontal = 0
+
+[node name="ProgressBar2" type="ProgressBar" parent="UI/Monster" unique_id=978158194]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 152.0
+offset_right = 364.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.45409518, 0.88240004, 0.31408063, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hdvqd")
+theme_override_font_sizes/font_size = 32
+max_value = 50.0
+
+[node name="Label3" type="Label" parent="UI/Monster" unique_id=98287533]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 127.0
+offset_right = 129.0
+offset_bottom = 164.0
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_fonts/font = ExtResource("2_hdvqd")
+theme_override_font_sizes/font_size = 32
+text = "怪物生命:"
+
+[node name="HP" type="Label" parent="UI/Monster" unique_id=1978927911]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 126.0
+offset_right = 197.0
+offset_bottom = 163.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="BagPanel" parent="UI" unique_id=825868328 instance=ExtResource("4_e5vbs")]
+visible = false
+
+[node name="Buttons" type="Control" parent="." unique_id=402583296]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1148.0
+offset_bottom = 649.0
+
+[node name="Defend" type="Button" parent="Buttons" unique_id=925248965]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 421.0
+offset_right = 960.0
+offset_bottom = 510.0
+theme_override_fonts/font = ExtResource("2_hdvqd")
+theme_override_font_sizes/font_size = 64
+text = "防御"
+
+[node name="Item" type="Button" parent="Buttons" unique_id=506457429]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 422.0
+offset_right = 645.0
+offset_bottom = 498.0
+theme_override_fonts/font = ExtResource("2_hdvqd")
+theme_override_font_sizes/font_size = 64
+text = "物品"
+
+[node name="Attack" type="Button" parent="Buttons" unique_id=1541324879]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 422.0
+offset_right = 354.0
+offset_bottom = 502.0
+theme_override_fonts/font = ExtResource("2_hdvqd")
+theme_override_font_sizes/font_size = 64
+text = "攻击"
+
+[node name="Quit" type="Button" parent="Buttons" unique_id=309955365]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 524.0
+offset_right = 633.0
+offset_bottom = 572.0
+theme_override_fonts/font = ExtResource("2_hdvqd")
+theme_override_font_sizes/font_size = 32
+text = "逃跑"
+
+[connection signal="pressed" from="Buttons/Defend" to="." method="_on_defend_pressed"]
+[connection signal="pressed" from="Buttons/Item" to="." method="_on_item_pressed"]
+[connection signal="pressed" from="Buttons/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]

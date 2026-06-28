@@ -1,0 +1,95 @@
+{
+  "dialogs": [
+	{
+	  "id": "start",
+	  "speaker": "神秘老人",
+	  "text": "年轻人，你终于来了。我等你很久了。",
+	  "next_id": "start_2"
+	},
+	{
+	  "id": "start_2",
+	  "speaker": "神秘老人",
+	  "text": "前方的路充满了危险，你必须做出选择。",
+	  "options": [
+		{
+		  "text": "我准备好了，请告诉我该怎么做",
+		  "next_id": "brave_path"
+		},
+		{
+		  "text": "危险？我想先了解更多",
+		  "next_id": "cautious_path"
+		},
+		{
+		  "text": "抱歉，我走错路了",
+		  "next_id": "coward_path"
+		}
+	  ]
+	},
+	{
+	  "id": "brave_path",
+	  "speaker": "神秘老人",
+	  "text": "很好！勇气是冒险者最重要的品质。拿着这把剑，去北方的暗影森林吧。",
+	  "next_id": "brave_path_2"
+	},
+	{
+	  "id": "brave_path_2",
+	  "speaker": "神秘老人",
+	  "text": "记住，真正的勇气不是没有恐惧，而是在恐惧面前依然前行。",
+	  "next_id": ""
+	},
+	{
+	  "id": "cautious_path",
+	  "speaker": "神秘老人",
+	  "text": "谨慎也是美德。让我告诉你这片大陆的故事……",
+	  "next_id": "cautious_path_2"
+	},
+	{
+	  "id": "cautious_path_2",
+	  "speaker": "神秘老人",
+	  "text": "很久以前，这里曾是一个繁荣的王国，直到黑暗降临。",
+	  "next_id": "cautious_path_3"
+	},
+	{
+	  "id": "cautious_path_3",
+	  "speaker": "神秘老人",
+	  "text": "现在，只有像你这样的冒险者才能拯救这个世界。你愿意接受这个使命吗？",
+	  "options": [
+		{
+		  "text": "我愿意",
+		  "next_id": "brave_path"
+		},
+		{
+		  "text": "我需要更多时间考虑",
+		  "next_id": "think_path"
+		}
+	  ]
+	},
+	{
+	  "id": "coward_path",
+	  "speaker": "神秘老人",
+	  "text": "……你确定吗？命运已经将你带到了这里。",
+	  "options": [
+		{
+		  "text": "好吧，我留下来听听",
+		  "next_id": "cautious_path"
+		},
+		{
+		  "text": "真的走错了，再见",
+		  "next_id": "leave_path"
+		}
+	  ]
+	},
+	{
+	  "id": "think_path",
+	  "speaker": "神秘老人",
+	  "text": "也好，想清楚再行动也不迟。但时间不等人啊……",
+	  "next_id": ""
+	},
+	{
+	  "id": "leave_path",
+	  "speaker": "神秘老人",
+	  "text": "唉……也许下次吧。",
+	  "next_id": ""
+	}
+  ]
+}

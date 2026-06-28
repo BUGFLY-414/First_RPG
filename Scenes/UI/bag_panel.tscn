@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://c4jmg15oc5bv"]
+
+[ext_resource type="LabelSettings" uid="uid://ckrwdaho8xkx4" path="res://Settings/new_label_settings.tres" id="1_5sx26"]
+[ext_resource type="StyleBox" uid="uid://bkccc8trbas22" path="res://Settings/panel_style_box_flat.tres" id="1_e7kcn"]
+[ext_resource type="Script" uid="uid://dbj2ryl3adg0i" path="res://Scripts/UI/bag_panel.gd" id="1_t6d72"]
+[ext_resource type="FontFile" uid="uid://c34hmocgwbla5" path="res://Assets/Fonts/Silver.ttf" id="2_8uxjp"]
+[ext_resource type="Texture2D" uid="uid://t7gm0u5uoho3" path="res://Assets/Items/coin.png" id="2_ndpgx"]
+[ext_resource type="PackedScene" uid="uid://6i5tier5e7l5" path="res://Scenes/UI/item_detail_panel.tscn" id="4_rhvwx"]
+
+[node name="BagPanel" type="Panel" unique_id=825868328]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -201.0
+offset_right = 102.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_e7kcn")
+script = ExtResource("1_t6d72")
+
+[node name="Coins" type="HBoxContainer" parent="." unique_id=455891328]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -62.0
+offset_top = -1.0
+offset_right = -8.0
+offset_bottom = 55.0
+grow_horizontal = 0
+
+[node name="Control" type="Control" parent="Coins" unique_id=2002409533]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Coins/Control" unique_id=336387698]
+layout_mode = 0
+offset_left = -41.0
+offset_top = -25.0
+offset_right = -9.0
+offset_bottom = 31.0
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("2_ndpgx")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Coins" unique_id=961978920]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8uxjp")
+theme_override_font_sizes/font_size = 32
+text = "："
+
+[node name="Amount" type="Label" parent="Coins" unique_id=607994922]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8uxjp")
+theme_override_font_sizes/font_size = 32
+text = "？？"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=121035856]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 242.0
+offset_bottom = 305.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=315247778]
+layout_mode = 2
+text = "背包"
+label_settings = ExtResource("1_5sx26")
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer" unique_id=723315699]
+layout_mode = 2
+allow_reselect = true
+auto_width = true
+auto_height = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=612498989]
+layout_mode = 2
+
+[node name="Use" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1366127096]
+layout_mode = 2
+text = "使用"
+
+[node name="Close" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=592787479]
+layout_mode = 2
+text = "关闭"
+
+[node name="ItemDetailPanel" parent="." unique_id=658410137 instance=ExtResource("4_rhvwx")]
+visible = false
+layout_mode = 1
+offset_left = 79.0
+offset_top = 16.0
+offset_right = -163.0
+offset_bottom = -286.0
+
+[connection signal="item_activated" from="VBoxContainer/ItemList" to="." method="_on_item_list_item_activated"]
+[connection signal="item_selected" from="VBoxContainer/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Use" to="." method="_on_use_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Close" to="." method="_on_close_pressed"]
+[connection signal="item_used" from="ItemDetailPanel" to="." method="_on_item_detail_panel_item_used"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://cdfqd624tbab8"]
+
+[ext_resource type="Script" uid="uid://bq6fgqlu7nb8d" path="res://Scripts/Core/equipment.gd" id="1_xfbxs"]
+
+[resource]
+script = ExtResource("1_xfbxs")
+slot = 1
+prt_bonus = 5
+name = "套装"
+description = "你也不知道这算什么装备，提升五点防御力"
+metadata/_custom_type_script = "uid://bq6fgqlu7nb8d"

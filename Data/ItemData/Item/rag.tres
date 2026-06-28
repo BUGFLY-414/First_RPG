@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cgsjxyw177iwr"]
+
+[ext_resource type="Texture2D" uid="uid://co86ocolvcs07" path="res://Assets/Items/rag.png" id="1_bmxa6"]
+[ext_resource type="Script" uid="uid://dbpdmshgsnv7q" path="res://Scripts/Core/item.gd" id="1_yknus"]
+
+[resource]
+script = ExtResource("1_yknus")
+name = "破布"
+description = "没啥用，能做绷带，也许"
+icon = ExtResource("1_bmxa6")
+metadata/_custom_type_script = "uid://dbpdmshgsnv7q"

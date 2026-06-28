@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MonsterData" format=3 uid="uid://bdvwaxytkovyr"]
+
+[ext_resource type="Script" uid="uid://mdb2lx1g2e5i" path="res://Data/MonsterData/monster_data.gd" id="1_46t1c"]
+[ext_resource type="Script" uid="uid://1jqhon3b2uqj" path="res://Scripts/Core/drop_item.gd" id="1_qnjvq"]
+[ext_resource type="Resource" uid="uid://pglnjjd6lnjp" path="res://Data/DropItemData/golblin_drop.tres" id="2_rqufh"]
+
+[resource]
+script = ExtResource("1_46t1c")
+name = "哥布林"
+max_health = 20
+base_atk = 7
+base_prt = 2
+coin_reward = 3
+drop_items = Array[ExtResource("1_qnjvq")]([ExtResource("2_rqufh")])
+metadata/_custom_type_script = "uid://mdb2lx1g2e5i"

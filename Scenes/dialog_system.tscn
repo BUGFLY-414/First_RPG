@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://3k4lgekjksr7"]
+
+[ext_resource type="Script" uid="uid://bigvtv5qkn5l8" path="res://Scripts/Dialog/dialog_manager.gd" id="1_dialog_mgr"]
+[ext_resource type="StyleBox" uid="uid://6sqbndiegphm" path="res://Settings/panel_style_ut.tres" id="2_dr6ha"]
+[ext_resource type="Theme" uid="uid://c848p31pgpknt" path="res://Settings/new_theme.tres" id="3_3n3ac"]
+[ext_resource type="AudioStream" uid="uid://bn0mnb2pw3tse" path="res://Assets/Audio/click4.ogg" id="4_3n3ac"]
+
+[node name="DialogSystem" type="CanvasLayer" unique_id=981019980]
+layer = 8
+script = ExtResource("1_dialog_mgr")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=209582126]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.3)
+
+[node name="DialogPanel" type="Panel" parent="." unique_id=2062192667]
+z_index = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 148.0
+offset_top = -244.0
+offset_right = -127.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("2_dr6ha")
+
+[node name="Speaker" type="RichTextLabel" parent="DialogPanel" unique_id=919058722]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -197.0
+offset_right = 303.0
+offset_bottom = -149.0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+bbcode_enabled = true
+text = "说话人"
+scroll_active = false
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogPanel" unique_id=1709541449]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 15
+
+[node name="Eventlog" type="RichTextLabel" parent="DialogPanel/MarginContainer" unique_id=794731003]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+bbcode_enabled = true
+text = "对话内容"
+
+[node name="NextIndicator" type="Control" parent="." unique_id=49581171]
+z_index = 1
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -65.0
+offset_right = -143.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Arrow" type="Label" parent="NextIndicator" unique_id=930051182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "▼"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="OptionContainer" type="VBoxContainer" parent="." unique_id=238983532]
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = 0.432
+anchor_right = 0.497
+anchor_bottom = 0.432
+offset_left = -150.544
+offset_top = -119.936005
+offset_right = 149.456
+offset_bottom = 120.063995
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_3n3ac")
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Portrait" type="TextureRect" parent="." unique_id=853618925]
+z_index = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.143
+anchor_bottom = 0.65400004
+offset_left = 13.0
+offset_top = 82.0
+offset_right = -17.736008
+offset_bottom = 117.20798
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Background" type="TextureRect" parent="." unique_id=844028063]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=432131660]
+stream = ExtResource("4_3n3ac")
+volume_db = -8.211
+pitch_scale = 1.27

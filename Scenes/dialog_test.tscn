@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ba0f8cu1e2g7b"]
+
+[ext_resource type="Script" uid="uid://khk5g2wo6yrj" path="res://Scripts/dialog_test.gd" id="1_vvkbv"]
+[ext_resource type="PackedScene" uid="uid://3k4lgekjksr7" path="res://Scenes/dialog_system.tscn" id="2_vvkbv"]
+
+[node name="DialogTest" type="Control" unique_id=1807309346]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vvkbv")
+
+[node name="DialogSystem" parent="." unique_id=908300106 instance=ExtResource("2_vvkbv")]
+
+[node name="Button" type="Button" parent="." unique_id=1775690823]
+layout_mode = 0
+offset_right = 108.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 32
+text = "返回"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

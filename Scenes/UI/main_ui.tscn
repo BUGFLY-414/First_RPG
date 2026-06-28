@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://vd7wq30yja01"]
+
+[ext_resource type="PackedScene" uid="uid://c4jmg15oc5bv" path="res://Scenes/UI/bag_panel.tscn" id="2_12m5l"]
+[ext_resource type="Script" uid="uid://bcf07hi4ghli1" path="res://Scripts/UI/main_ui.gd" id="2_nqiow"]
+[ext_resource type="PackedScene" uid="uid://b8paa3chjudh8" path="res://Scenes/UI/character_panel.tscn" id="3_nqiow"]
+
+[node name="MainUI" type="CanvasLayer" unique_id=1879925981]
+layer = 10
+script = ExtResource("2_nqiow")
+
+[node name="Panel" type="Panel" parent="." unique_id=1056538456]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="Panel" unique_id=1139640028]
+layout_mode = 0
+offset_left = 13.0
+offset_right = 1136.0
+offset_bottom = 597.0
+theme_override_font_sizes/font_size = 32
+current_tab = 0
+tab_0/title = "背包"
+tab_1/title = "角色"
+
+[node name="BagPanel" parent="Panel/TabContainer" unique_id=825868328 instance=ExtResource("2_12m5l")]
+layout_mode = 2
+metadata/_tab_index = 0
+metadata/_tab_name = "背包"
+
+[node name="CharacterPanel" parent="Panel/TabContainer" unique_id=2089967726 instance=ExtResource("3_nqiow")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "角色"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=660060808]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -45.0
+offset_right = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+
+[node name="CloseButton" type="Button" parent="Panel/HBoxContainer" unique_id=1801503638]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "退出"
+
+[connection signal="item_used" from="Panel/TabContainer/BagPanel" to="." method="_on_bag_panel_item_used"]
+[connection signal="pressed" from="Panel/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bngfs5nne2s61"]
+
+[ext_resource type="Texture2D" uid="uid://c4r7mlyyt1lm0" path="res://Assets/Tilemap/tilemap_packed.png" id="1_k3t2v"]
+[ext_resource type="Script" uid="uid://dj20uy7wmdimr" path="res://Scripts/Interactables/notice.gd" id="1_n053o"]
+[ext_resource type="Script" uid="uid://hjxxvv4h8my5" path="res://Scripts/Core/interactable.gd" id="2_n053o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r74qd"]
+atlas = ExtResource("1_k3t2v")
+region = Rect2(176, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_um5o3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r74qd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kj5ij"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_um5o3"]
+size = Vector2(31, 30)
+
+[node name="Notice" type="StaticBody2D" unique_id=809216900]
+script = ExtResource("1_n053o")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=531840047]
+sprite_frames = SubResource("SpriteFrames_um5o3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=380138365]
+shape = SubResource("RectangleShape2D_kj5ij")
+
+[node name="Interactable" type="Area2D" parent="." unique_id=1103121780]
+visible = false
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_n053o")
+dialog_path = "res://Data/DialogData/mytest.json"
+default_text = "告示牌"
+metadata/_custom_type_script = "uid://hjxxvv4h8my5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=618398008]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_um5o3")
+debug_color = Color(0.49750513, 0.48860645, 0.83339554, 0.41960785)

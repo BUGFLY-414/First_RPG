@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://brybiji1tfk1u"]
+
+[ext_resource type="Script" uid="uid://1n60f1vhkk30" path="res://Scripts/character_creation.gd" id="1_cc0j0"]
+[ext_resource type="LabelSettings" uid="uid://ckrwdaho8xkx4" path="res://Settings/new_label_settings.tres" id="2_4djyg"]
+[ext_resource type="FontFile" uid="uid://c34hmocgwbla5" path="res://Assets/Fonts/Silver.ttf" id="3_5wfhc"]
+
+[node name="CharacterCreation" type="Panel" unique_id=517463103]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cc0j0")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2005193409]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer" unique_id=650530675]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer" unique_id=519822533]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=536500487]
+layout_mode = 2
+text = "创建角色"
+label_settings = ExtResource("2_4djyg")
+
+[node name="Name" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=702181896]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/Name" unique_id=1449586582]
+layout_mode = 2
+text = "你的名字是 :"
+label_settings = ExtResource("2_4djyg")
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/MarginContainer/VBoxContainer/Name" unique_id=869920705]
+layout_mode = 2
+
+[node name="AttributeArrangement" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=123767907]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/AttributeArrangement" unique_id=638769273]
+layout_mode = 2
+text = "属性分配(还没做力敏体这些）"
+label_settings = ExtResource("2_4djyg")
+
+[node name="HP" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/AttributeArrangement" unique_id=1844023370]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/AttributeArrangement/HP" unique_id=1135046632]
+layout_mode = 2
+text = "基础生命"
+label_settings = ExtResource("2_4djyg")
+
+[node name="SpinBox" type="SpinBox" parent="CenterContainer/MarginContainer/VBoxContainer/AttributeArrangement/HP" unique_id=1827717402]
+layout_mode = 2
+min_value = 20.0
+value = 30.0
+
+[node name="ATK" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/AttributeArrangement" unique_id=1578795252]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/AttributeArrangement/ATK" unique_id=515079342]
+layout_mode = 2
+text = "基础攻击"
+label_settings = ExtResource("2_4djyg")
+
+[node name="SpinBox" type="SpinBox" parent="CenterContainer/MarginContainer/VBoxContainer/AttributeArrangement/ATK" unique_id=687279838]
+layout_mode = 2
+min_value = 1.0
+max_value = 20.0
+value = 10.0
+
+[node name="PRT" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/AttributeArrangement" unique_id=253682993]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/AttributeArrangement/PRT" unique_id=1349949676]
+layout_mode = 2
+text = "基础防御"
+label_settings = ExtResource("2_4djyg")
+
+[node name="SpinBox" type="SpinBox" parent="CenterContainer/MarginContainer/VBoxContainer/AttributeArrangement/PRT" unique_id=1399074273]
+layout_mode = 2
+max_value = 10.0
+
+[node name="InitialItem" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=1228409778]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/InitialItem" unique_id=1549378676]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "初始物品："
+label_settings = ExtResource("2_4djyg")
+
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/MarginContainer/VBoxContainer/InitialItem" unique_id=25039645]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+item_count = 4
+popup/item_0/text = "凝胶"
+popup/item_0/id = 0
+popup/item_1/text = "破布"
+popup/item_1/id = 1
+popup/item_2/text = "生命药水"
+popup/item_2/id = 2
+popup/item_3/text = "套装"
+popup/item_3/id = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=302666417]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Quit" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1269493597]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5wfhc")
+theme_override_font_sizes/font_size = 32
+text = "退出"
+
+[node name="Creat" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=505941721]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5wfhc")
+theme_override_font_sizes/font_size = 32
+text = "创建"
+
+[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Creat" to="." method="_on_creat_pressed"]

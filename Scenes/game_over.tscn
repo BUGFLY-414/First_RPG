@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cebm3aftcuau2"]
+
+[ext_resource type="FontFile" uid="uid://c34hmocgwbla5" path="res://Assets/Fonts/Silver.ttf" id="1_ojehl"]
+
+[node name="GameOver" type="Node2D" unique_id=2062504069]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1615423631]
+offset_right = 1154.0
+offset_bottom = 646.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=120489368]
+offset_left = 259.0
+offset_top = 232.0
+offset_right = 964.0
+offset_bottom = 474.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_ojehl")
+theme_override_font_sizes/normal_font_size = 256
+bbcode_enabled = true
+text = "[shake]菜就多练[/shake]"
+scroll_active = false

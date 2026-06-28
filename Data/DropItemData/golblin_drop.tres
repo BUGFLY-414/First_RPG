@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DropItem" format=3 uid="uid://pglnjjd6lnjp"]
+
+[ext_resource type="Resource" uid="uid://cgsjxyw177iwr" path="res://Data/ItemData/Item/rag.tres" id="1_u5net"]
+[ext_resource type="Script" uid="uid://1jqhon3b2uqj" path="res://Scripts/Core/drop_item.gd" id="2_oxr66"]
+
+[resource]
+script = ExtResource("2_oxr66")
+item = ExtResource("1_u5net")
+min_amount = 1
+max_amount = 3
+prob = 1.0
+metadata/_custom_type_script = "uid://1jqhon3b2uqj"

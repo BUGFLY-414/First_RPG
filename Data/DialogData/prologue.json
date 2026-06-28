@@ -1,0 +1,45 @@
+
+{
+  "dialogs": [
+	{
+	  "id": "start",
+	  "speaker": "{player_name}",
+	  "text": "我撞大运了。",
+	  "next_id": "p1"
+
+	},
+	{
+	  "id": "p1",
+	  "speaker": "{player_name}",
+	  "text": "是的，我撞大运了。",
+	  "next_id": "p2"
+	},
+	{
+	  "id": "p2",
+	  "speaker": "{player_name}",
+	  "text": "那是一个风雨交加的夜晚。我记得我在时团超话上说他们几个长的不如吴彦祖，\n然后回家的时候从背后被人打晕了，醒来的时候我已经躺倒在国道上了。",
+	  "bg": "res://Assets/Sprites/大运.png",
+	  "next_id": "p3"
+	},
+	{
+	  "id": "p3",
+	  "speaker": "{player_name}",
+	  "text": "睁开眼的时候，那辆大运已经近在咫尺了。\n我错了，时代少年团，对不起\n，马嘉祺、丁程鑫、宋亚轩、刘耀文、张真源、严浩翔、贺峻霖。",
+	  "bg": "res://Assets/Sprites/大运.png",
+	  "next_id": "p4"
+	},
+	{
+	  "id": "p4",
+	  "speaker": "{player_name}",
+	  "text": "啊我死了。",
+	  "next_id": ""
+	},
+	{
+	  "id": "",
+	  "speaker": "{player_name}",
+	  "text": "",
+	  "next_id": ""
+	}
+
+  ]
+}
