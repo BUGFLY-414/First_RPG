@@ -64,7 +64,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_um5o3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_down",
 "speed": 5.0
 }, {
@@ -78,7 +78,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6kmi7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_left",
 "speed": 6.0
 }, {
@@ -92,7 +92,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fywi0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_right",
 "speed": 6.0
 }, {
@@ -106,7 +106,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x6eyg")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_up",
 "speed": 5.0
 }]
@@ -131,7 +131,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b7ny0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"E",
 "speed": 3.0
 }]
@@ -156,28 +156,27 @@ shape = SubResource("RectangleShape2D_um5o3")
 [node name="Interact" type="CanvasLayer" parent="." unique_id=583228391]
 layer = 10
 
-[node name="Control" type="Control" parent="Interact" unique_id=1320017514]
-layout_mode = 3
+[node name="Control" type="HBoxContainer" parent="Interact" unique_id=1393077138]
+anchors_preset = -1
 anchor_right = 0.035
 anchor_bottom = 0.062000003
 offset_left = 47.0
 offset_top = 594.0
-offset_right = 46.68
-offset_bottom = 593.824
+offset_right = 138.68
+offset_bottom = 641.824
 
-[node name="KeyAnimation" type="AnimatedSprite2D" parent="Interact/Control" unique_id=1943344828]
-position = Vector2(82, 26.000008)
-scale = Vector2(3, 3)
+[node name="Label" type="Label" parent="Interact/Control" unique_id=100173073]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "互动"
+
+[node name="Container" type="Control" parent="Interact/Control" unique_id=142738600]
+layout_mode = 2
+
+[node name="KeyAnimation" type="AnimatedSprite2D" parent="Interact/Control/Container" unique_id=1943344828]
+position = Vector2(26.724003, 29.5)
+scale = Vector2(3.5344996, 3.6875)
 sprite_frames = SubResource("SpriteFrames_srs4i")
 animation = &"E"
 autoplay = "E"
 frame_progress = 0.21500969
-
-[node name="Label" type="Label" parent="Interact/Control" unique_id=100173073]
-layout_mode = 0
-offset_left = -31.0
-offset_top = 4.0
-offset_right = 50.0
-offset_bottom = 76.0
-theme_override_font_sizes/font_size = 64
-text = "互动"

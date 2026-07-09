@@ -5,7 +5,8 @@ extends CharacterBody2D
 @onready var animated_sp: AnimatedSprite2D = $AnimatedSprite2D
 @onready var interact: CanvasLayer = $Interact
 @onready var label: Label = $Interact/Control/Label
-@onready var key_animation: AnimatedSprite2D = $Interact/Control/KeyAnimation
+@onready var key_animation: AnimatedSprite2D = $Interact/Control/Container/KeyAnimation
+
 
 ##玩家状态
 var stats: Playerstats
