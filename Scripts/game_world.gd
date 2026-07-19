@@ -16,6 +16,7 @@ func _on_button_pressed() -> void:
 	if Global.player == null:
 		print("请先创建角色")
 		return
+	Global.return_scene = "res://Scenes/game_world.tscn"  #有待优化
 	SceneManager.change_scene_with_fade("res://Scenes/battle_scene.tscn")
 
 #跳转角色创建场景

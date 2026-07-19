@@ -136,7 +136,7 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="PlayerController" type="CharacterBody2D" unique_id=1892772072]
+[node name="PlayerController" type="CharacterBody2D" unique_id=1892772072 groups=["player"]]
 y_sort_enabled = true
 collision_mask = 3
 motion_mode = 1

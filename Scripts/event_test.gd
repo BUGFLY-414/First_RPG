@@ -25,8 +25,9 @@ func random_event():
 func event_battle():
 	DialogSystem.start_dialog(entries,"battle")
 	await DialogSystem.dialog_finished
-	var monster = Monster.create_from_data(goblin_data)
+	var monster = Monsterstats.create_from_data(goblin_data)
 	Global.battle_monster = monster
+	Global.return_scene = get_tree().current_scene.scene_file_path
 	SceneManager.change_scene_with_fade("res://Scenes/battle_scene.tscn")
 
 func event_chest():

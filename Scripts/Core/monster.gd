@@ -1,5 +1,5 @@
 extends Character
-class_name Monster
+class_name Monsterstats
 
 var drop_table: Array = []
 var coin_reward: int = 0
@@ -20,8 +20,8 @@ func get_drops() -> Array:
 			reward.append([drop.item, amount])
 	return reward
 
-static func create_from_data(data:MonsterData) -> Monster:
-	var m = Monster.new()
+static func create_from_data(data:MonsterData) -> Monsterstats:
+	var m = Monsterstats.new()
 	m.name = data.name
 	m.max_health = data.max_health
 	m.base_atk = data.base_atk
@@ -30,3 +30,4 @@ static func create_from_data(data:MonsterData) -> Monster:
 	m.coin_reward = data.coin_reward
 	m.health = m.max_health
 	return m
+

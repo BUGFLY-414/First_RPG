@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bncweekwwmk1e"]
+
+[ext_resource type="Script" uid="uid://4608cu66w537" path="res://Scripts/Monsters/monster.gd" id="1_pbch1"]
+[ext_resource type="Texture2D" uid="uid://mol3wir8ep5b" path="res://icon.svg" id="2_kov8c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x8jwg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kov8c")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3fie"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x8jwg"]
+radius = 24.083189
+
+[node name="Monster" type="CharacterBody2D" unique_id=216412725]
+script = ExtResource("1_pbch1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2088553774]
+position = Vector2(1, 1.5)
+scale = Vector2(0.171875, 0.16406249)
+sprite_frames = SubResource("SpriteFrames_x8jwg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1121237737]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_y3fie")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1728414262]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1425737613]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_x8jwg")
+debug_color = Color(0.514329, 0.43787873, 0.96138495, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -9,11 +9,10 @@ extends Node2D
 @onready var bag_panel = $UI/BagPanel
 
 
-var inv :Inventory = Inventory.new()
 var player:Playerstats = Global.player
 
 
-var monster : Monster = null
+var monster : Monsterstats = null
 enum STATE{
 	PLAYER_TURN,
 	ENEMY_TURN,
@@ -62,18 +61,17 @@ func add_reward() -> void:
 
 func lose() -> void:
 	add_text("游戏结束")
-	SceneManager.change_scene_with_fade_in("res://Scenes/game_over.tscn")
+	Global.end_battle("lose")
 
 func win():
 	add_text("战斗胜利")
 	add_reward()
 	monster = null
-	Global.battle_monster = null
 	update_hp_bar()
-	SceneManager.change_scene_with_fade("res://Scenes/game_world.tscn")
+	Global.end_battle("win")
 		
 	
-func enemy_turn(enemy:Monster = null) -> void:
+func enemy_turn(enemy:Monsterstats = null) -> void:
 	if state != STATE.ENEMY_TURN or enemy.is_dead:
 		print("不是敌人回合")
 		return
@@ -158,13 +156,13 @@ func _on_defend_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	if monster == null:
-		SceneManager.change_scene_with_fade_in("res://Scenes/game_world.tscn")
+		Global.end_battle("escape")
 		return
 	if state != STATE.PLAYER_TURN :
 		add_text("战斗中不能退出")
 	var chance = randi_range(0,1)
 	if chance == 1:
-		SceneManager.change_scene_with_fade_in("res://Scenes/game_world.tscn")
+		Global.end_battle("escape")
 	if chance == 0:
 		add_text("逃脱失败")
 		change_state(STATE.ENEMY_TURN)

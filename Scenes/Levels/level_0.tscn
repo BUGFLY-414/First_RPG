@@ -1,12 +1,16 @@
 [gd_scene format=4 uid="uid://je07lb537bgy"]
 
+[ext_resource type="Script" uid="uid://bxa6hocxp7x1d" path="res://Scripts/Levels/level_0.gd" id="1_kj5ij"]
 [ext_resource type="TileSet" uid="uid://cey3b58g63dt1" path="res://Settings/new_tile_set.tres" id="1_y8ppt"]
 [ext_resource type="PackedScene" uid="uid://crfspinqd4gig" path="res://Scenes/Player/playercontroller.tscn" id="2_2iktx"]
 [ext_resource type="PackedScene" uid="uid://bngfs5nne2s61" path="res://Scenes/Interactables/notice.tscn" id="3_r74qd"]
+[ext_resource type="PackedScene" uid="uid://bncweekwwmk1e" path="res://Scenes/Monsters/monster.tscn" id="5_kj5ij"]
 [ext_resource type="LabelSettings" uid="uid://ckrwdaho8xkx4" path="res://Settings/new_label_settings.tres" id="5_um5o3"]
+[ext_resource type="Resource" uid="uid://bdvwaxytkovyr" path="res://Data/MonsterData/goblin.tres" id="7_1ih7c"]
 
 [node name="Level0" type="Node2D" unique_id=916935717]
 y_sort_enabled = true
+script = ExtResource("1_kj5ij")
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=185765455]
 y_sort_enabled = true
@@ -43,3 +47,9 @@ offset_right = 171.0
 offset_bottom = 575.0
 text = "按 I 打开角色面板"
 label_settings = ExtResource("5_um5o3")
+
+[node name="Monster" parent="." unique_id=216412725 instance=ExtResource("5_kj5ij")]
+position = Vector2(576, 315)
+data = ExtResource("7_1ih7c")
+
+[connection signal="player_detected" from="Monster" to="." method="_on_monster_player_detected"]

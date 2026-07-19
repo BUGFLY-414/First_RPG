@@ -23,6 +23,10 @@ DialogSystem="*uid://3k4lgekjksr7"
 TweenPlayer="*uid://iwvdpijmo8k3"
 MainUI="*uid://vd7wq30yja01"
 
+[global_group]
+
+player=""
+
 [gui]
 
 theme/custom_font="uid://c34hmocgwbla5"
