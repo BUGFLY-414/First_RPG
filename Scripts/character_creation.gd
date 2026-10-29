@@ -19,7 +19,8 @@ func get_attributes():
 		"name": chr_name.text,
 		"hp": chr_hp.value,
 		"atk": chr_atk.value,
-		"prt": chr_prt.value
+		"prt": chr_prt.value,
+		"speed": 10.0
 	}
 	
 func quit():
@@ -35,7 +36,7 @@ func _on_creat_pressed() -> void:
 
 	var inv :Inventory = Inventory.new()
 	var attrs = get_attributes()
-	var player:Playerstats = Playerstats.new(attrs["name"], attrs["hp"], attrs["atk"], attrs["prt"], inv)
+	var player:Playerstats = Playerstats.new(attrs["name"], attrs["hp"], attrs["atk"], attrs["prt"],attrs["speed"],inv,)
 	Global.player = player
 	player.inventory.add_item(item,1)
 	quit()

@@ -11,5 +11,6 @@ max_health = 20
 base_atk = 7
 base_prt = 2
 coin_reward = 3
+speed = 8.0
 drop_items = Array[ExtResource("1_qnjvq")]([ExtResource("2_rqufh")])
 metadata/_custom_type_script = "uid://mdb2lx1g2e5i"

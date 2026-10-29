@@ -8,4 +8,5 @@ class_name MonsterData
 @export var base_atk: int = 5
 @export var base_prt: int = 0
 @export var coin_reward: int = 0
+@export var speed: float = 10.0
 @export var drop_items: Array[DropItem] = []   # 以后扩展

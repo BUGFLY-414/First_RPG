@@ -5,5 +5,10 @@ extends StaticBody2D
 
 @export var dialog_path:String = ""
 
-func _ready() -> void:
-	interactable.dialog_path = dialog_path
+
+func _ready():
+	interactable.interacted.connect(_on_interact)
+
+
+func _on_interact():
+	pass

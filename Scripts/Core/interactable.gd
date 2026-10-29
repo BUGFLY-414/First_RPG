@@ -4,12 +4,12 @@ extends Area2D
 
 signal interacted
 
-@export var dialog_path: String = ""  ##互动对话的内容，应该是json文件路径
+@export_file("*.dialogue") var dialog_path: String = ""  ##互动对话的文件路径(.dialogue)
 @export var dialog_start_id: String = "start" ##对话开始时的id
 @export var default_text:String = "互动" ##交互时显示的动作名称
 var custom_text:String = "" ##暂时没什么用
 @export var interact_key = "E" ## 必须是大写英文字母
-@export var lock_movement := true ##是否锁定玩家移动,但是这块逻辑有问题，暂时都是默认锁的
+@export var lock_movement := true ##是否锁定玩家移动,但是这块逻辑有问题，暂时都是默认锁的##这个应该放在玩家身上。所以换完插件之后已经改到玩家逻辑里了
 
 func _ready() -> void:
 	#collision_layer = 0
@@ -23,11 +23,21 @@ func interact():
 	if not is_inside_tree():
 		return
 
-	if dialog_path != "" :
-		print("[含对话互动] {name} {default_text}")
-		DialogSystem.start_dialog_from_file(dialog_path,dialog_start_id)
-	else :
-		print("[互动] {name} {default_text}")
+	if dialog_path != "":
+		print("[含对话互动] ", name, " ", default_text)
+		
+		# 1. 运行时动态加载 .dialogue 资源
+		var dialogue_resource = load(dialog_path)
+		
+		if dialogue_resource == null:
+			push_error("找不到对话文件，请检查路径: " + dialog_path)
+			return
+			
+		# 2. 调用插件 API，第一个参数传资源，第二个参数传起始标签
+		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialog_start_id)
+		
+	else:
+		print("[互动] ", name, " ", default_text)
 
 	interacted.emit()
 

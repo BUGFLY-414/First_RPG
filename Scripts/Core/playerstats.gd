@@ -1,23 +1,23 @@
 ## 玩家数据类
 class_name Playerstats extends Character
 
-enum Slot {
+enum Slot { # 定义装备槽位枚举
 	WEAPON,
 	ARMOR,
 	UNKNOWN
 }
 
-var equipments: Dictionary = {
+var equipments: Dictionary = { # 使用字典存储装备，键为槽位枚举，值为对应的装备对象
 	Slot.WEAPON: null,
 	Slot.ARMOR: null,
 	Slot.UNKNOWN: null
 }
-var inventory: Inventory
-var coin: int = 0
+var inventory: Inventory # 物品栏实例
+var coin: int = 0 # 玩家拥有的金币数量
 
-func _init(n: String, m_hp: int, atk: int, b_prt: int = 0, inv: Inventory = null):
-	super(n, m_hp, atk, b_prt)
-	inventory = inv if inv else Inventory.new()
+func _init(n: String, m_hp: int, atk: int, b_prt: int = 0,new_speed:float = 10.0,inv: Inventory = null):
+	super(n, m_hp, atk, b_prt,new_speed) 					# 调用父类的构造函数，传递n, m_hp, atk, b_prt参数
+	inventory = inv if inv else Inventory.new() # 初始化inventory变量
 
 func get_total_atk() -> int:
 	var base = super.get_total_atk()

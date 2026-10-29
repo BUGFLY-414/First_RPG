@@ -2,6 +2,7 @@
 extends RefCounted
 class_name Character
 
+# 基本属性
 var max_health: int
 var name: String
 var health: int
@@ -9,16 +10,28 @@ var base_atk: int
 var temp_atk: int = 0
 var base_prt: int
 var temp_prt: int = 0
+
+# 状态
 var action= null
 var is_dead = false
 var is_defending = false
+var speed: float = 10.0
+var atb_gauge: float = 0.0 # 动作条
 
-func _init(new_name: String , new_max_health: int, new_base_atk: int, new_base_prt: int = 0):
+# 施法相关
+var is_casting: bool = false
+var cast_gauge: float = 0.0 	# 施法条
+var cast_time: float = 0.0     # 当前行动需要的时间（比如攻击 1.0 秒，大招 3.0 秒）
+var pending_action: String = "" # 当前在准备什么行动（"attack", "defend", "skill_xxx"）
+
+
+func _init(new_name: String , new_max_health: int, new_base_atk: int, new_base_prt: int = 0,new_speed: float = 10.0):
 	max_health = new_max_health
 	name = new_name
 	health = new_max_health
 	base_atk = new_base_atk
 	base_prt = new_base_prt
+	speed = new_speed
 
 func get_total_prt() -> int:
 	return base_prt + temp_prt

@@ -29,5 +29,6 @@ static func create_from_data(data:MonsterData) -> Monsterstats:
 	m.drop_table = data.drop_items
 	m.coin_reward = data.coin_reward
 	m.health = m.max_health
+	m.speed = data.speed
 	return m
 

@@ -1,0 +1,36 @@
+{
+	"dialogs":[
+
+	{
+	  "id": "start",
+	  "speaker": "村长",
+	  "text": "去把怪给我杀了，我给你钱。",
+	  "next_id": "p"
+	},
+	{
+	  "id": "p",
+	  "speaker": "你",
+	  "text": "好",
+	  "next_id": ""
+
+	},
+	{
+	  "id": "questover",
+	  "speaker": "你",
+	  "text": "杀完了。",
+	  "next_id": "q2"
+	},
+		{
+	  "id": "q2",
+	  "speaker": "村长",
+	  "text": "好,给你一伯块",
+	  "next_id": ""
+	},
+	{
+	  "id": "d",
+	  "speaker": "村长",
+	  "text": "你拿完钱了，滚。",
+	  "next_id": ""
+	}
+]
+}

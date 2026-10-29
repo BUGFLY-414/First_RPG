@@ -1,8 +1,18 @@
 
 {
-  "dialogs": [
+	"dialogs": [
 	{
 	  "id": "start",
+	  "speaker": "",
+	  "text": "跳过剧情？",
+	  "options": [
+		{ "text": "我愿意！", "next_id": ""},
+		{ "text": "不", "next_id": "p" }
+	  ]
+	},
+
+	{
+	  "id": "p",
 	  "speaker": "{player_name}",
 	  "text": "我撞大运了。",
 	  "next_id": "p1"

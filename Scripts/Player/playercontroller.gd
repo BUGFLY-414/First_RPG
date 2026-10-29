@@ -29,12 +29,19 @@ func _unhandled_input(event: InputEvent) -> void:
 func _ready() -> void:
 	stats = Global.player if Global.player else null
 	interact.hide()
-	DialogSystem.dialog_started.connect(_on_dialog_started)
-	DialogSystem.dialog_finished.connect(_on_dialog_finished)
+
+	#旧对话系统的信号连接，可以保留，但是估计是用不到了
+	#DialogSystem.dialog_started.connect(_on_dialog_started)
+	#DialogSystem.dialog_finished.connect(_on_dialog_finished)
+
+	 # 监听全局对话开始和结束
+	DialogueManager.dialogue_started.connect(_on_dialogue_started)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
 ## 决定方向和速度
 func get_dir():
 	if not can_move:
+		velocity = Vector2.ZERO  # 强制刹车
 		return
 	# Input.get_vector() 会处理方向键（包括对角线）并返回一个归一化的向量
 	input_dir = Input.get_vector("left", "right", "up", "down")
@@ -91,7 +98,7 @@ func update_interact_text():
 	label.text = nearest.get_current_text()
 	label.visible = true
 
-func _on_dialog_started() -> void:	
+func _on_dialogue_started(_resource) -> void:	
 	dialog_active = true
 	can_move = false
 	refresh_interact_ui()
@@ -99,7 +106,7 @@ func _on_dialog_started() -> void:
 	animated_sp.frame = 1
 	
 
-func _on_dialog_finished() -> void:
+func _on_dialogue_ended(_resource) -> void:
 	dialog_active = false
 	can_move = true
 	refresh_interact_ui()

@@ -39,7 +39,8 @@ visible = false
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("2_n053o")
-dialog_path = "res://Data/DialogData/mytest.json"
+dialog_path = "uid://col7f5ufg3uom"
+dialog_start_id = ""
 default_text = "告示牌"
 metadata/_custom_type_script = "uid://hjxxvv4h8my5"
 

@@ -5,7 +5,10 @@ var battle_monster:Monsterstats = null  ## 战斗中的怪物数据
 var battle_monster_id: String = ""  ## 战斗中的怪物ID
 var defeated_monsters: Array[String] = [] ##被击败的怪物(的ID）
 var return_scene: String = ""  ## 战斗结束后返回的场景路径
-
+## 任务标记
+var quest_flags: Dictionary = {
+    "slime_killed": false
+}
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -26,12 +29,19 @@ func start_battle(monster:Monsterstats, id :String ,entry_scene: String) -> void
 func end_battle(result: String) -> void:
 	# 统一处理战斗结束后的怪物数据清理
 	var current_monster_id = battle_monster_id
-	battle_monster = null
-	battle_monster_id = ""
+	
 	
 	match result:
 		"win" :			
 			defeated_monsters.append(current_monster_id)  # 存怪物场景的唯一ID
+			if battle_monster_id == "golbin_1": # 或者根据怪物名字判断
+				quest_flags["slime_killed"] = true
+				
+			print("已记录击败怪物ID:", battle_monster_id, " 列表:", defeated_monsters)
+
+			battle_monster = null
+			battle_monster_id = ""
+
 			SceneManager.change_scene_with_fade(return_scene)
 	
 		"lose" :

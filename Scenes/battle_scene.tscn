@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://beti4j087fid1"]
 
-[ext_resource type="Script" uid="uid://tr8w8i1kt3ke" path="res://Scripts/battle_scene.gd" id="1_b25br"]
+[ext_resource type="Script" uid="uid://tr8w8i1kt3ke" path="res://Scripts/Battle/battle_scene.gd" id="1_b25br"]
 [ext_resource type="FontFile" uid="uid://c34hmocgwbla5" path="res://Assets/Fonts/Silver.ttf" id="2_hdvqd"]
+[ext_resource type="LabelSettings" uid="uid://ckrwdaho8xkx4" path="res://Settings/new_label_settings.tres" id="3_3gnqe"]
+[ext_resource type="Script" uid="uid://cw178rsm475o8" path="res://Scripts/Battle/battle_manager.gd" id="4_3gnqe"]
 [ext_resource type="PackedScene" uid="uid://c4jmg15oc5bv" path="res://Scenes/UI/bag_panel.tscn" id="4_e5vbs"]
 
 [node name="BattleScene" type="Node2D" unique_id=1497557195]
@@ -26,10 +28,10 @@ anchor_left = 0.5
 anchor_top = 0.3919753
 anchor_right = 0.5
 anchor_bottom = 0.3919753
-offset_left = -576.0
-offset_top = -254.0
-offset_right = 219.0
-offset_bottom = 39.0
+offset_left = -574.0
+offset_top = 257.0
+offset_right = 221.0
+offset_bottom = 550.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.4307305, 0.4280822)
@@ -80,6 +82,21 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "0"
 
+[node name="ATBProgressBar" type="ProgressBar" parent="UI/Player" unique_id=1771700631]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 99.0
+offset_right = 260.0
+offset_bottom = 122.0
+
+[node name="StateLabel" type="Label" parent="UI/Player" unique_id=1329214548]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 75.0
+offset_right = 151.0
+offset_bottom = 94.0
+label_settings = ExtResource("3_3gnqe")
+
 [node name="Monster" type="Control" parent="UI" unique_id=1691607315]
 layout_mode = 3
 anchors_preset = 1
@@ -123,6 +140,13 @@ offset_bottom = 163.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "0"
+
+[node name="ATBProgressBar" type="ProgressBar" parent="UI/Monster" unique_id=210232038]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 103.0
+offset_right = 198.0
+offset_bottom = 126.0
 
 [node name="BagPanel" parent="UI" unique_id=825868328 instance=ExtResource("4_e5vbs")]
 visible = false
@@ -172,6 +196,9 @@ offset_bottom = 572.0
 theme_override_fonts/font = ExtResource("2_hdvqd")
 theme_override_font_sizes/font_size = 32
 text = "逃跑"
+
+[node name="BattleManager" type="Node" parent="." unique_id=413646551]
+script = ExtResource("4_3gnqe")
 
 [connection signal="pressed" from="Buttons/Defend" to="." method="_on_defend_pressed"]
 [connection signal="pressed" from="Buttons/Item" to="." method="_on_item_pressed"]
